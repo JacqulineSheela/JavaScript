@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Palindrome</title>
+    
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Palindrome</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="Type a sentence">
+         </div>
+        <div>
+            <button type="submit" onclick="pal()">Check</button>
+        </div>
+    
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+        function pal(){
+            let str=document.getElementById("input").value
+            let cleanedStr = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
+            let reversedstr=cleanedStr.split(" ").reverse().join(" ")
+            let sentence
+            if(cleanedStr===reversedstr)
+                sentence="Palindrome"
+            else
+                sentence="Not a Palindrome"
+
+            let result=document.querySelector("#result")
+            result.innerHTML=sentence
+           
+        }
+        
+        
+    </script>
+    
+</body>
+</html>

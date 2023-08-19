@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>EB bill calculator</title>
+    
+</head>
+<body>
+    <div id="wrapper">
+        <h2>EB Bill Calculator</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="Enter the Amount">
+         </div>
+        <div>
+            <button type="submit" onclick="ebcalulator()">Generate bill</button>
+        </div>
+    
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+        function ebcalulator(){
+            let x=Number(document.getElementById("input").value)
+            if(x<=50){
+                amt=x*0.75
+            }
+            else if(x>50 &&  x<=150){
+                y=x-50
+                amt=((y*1)+ 37.5)
+            }
+            else if(x>150 &&  x<=250){
+                // y=x-50
+                // z=y-100
+                // amt=(z*1.30)+(y*1)+(50*0.75)
+                y=x-150
+                amt=(y*1.30)+137.5
+            }
+            else{
+                // y=x-50
+                // z=y-100
+                // m=z-100
+                // amt=((50*0.75)+((y-z)*1)+((z-m)*1.30)+(m*1.50))
+                y=x-250
+                amt=((y*1.50)+267.5)
+            }
+            
+            let result=document.querySelector("#result")
+            result.innerHTML=amt
+           
+        }
+        
+        
+    </script>
+    
+</body>
+</html>

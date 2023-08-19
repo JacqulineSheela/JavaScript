@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAR Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hi there! Welcome to My website</h1>
+    <h3>There is a calculator below to help you calculate the QAR received into INR . This will help you with performing conversion and make your calculations way easier.</h3>
+    <div id="wrapper">
+        <h2>INR to QAR</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="Amount in QAR">
+        </div>
+        <div>
+            <button type="submit" onclick="convert()">Convert to INR</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+        function convert(){
+            const QARval=Number(document.getElementById('input').value);
+            const INRval= QARval*22.74;
+            const result= document.getElementById("result");
+            result.innerHTML=INRval.toFixed(2) + " Rupees";
+        }
+    </script>
+</body>
+</html>
